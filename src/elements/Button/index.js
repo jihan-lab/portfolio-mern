@@ -4,6 +4,8 @@ import propTypes from 'prop-types'
 
 
 const Button = (props) => {
+
+    // Ini untuk mempush className di react
     const className = [props.className]
     if (props.isPrimary) className.push("btn-primary")
     if (props.isLarge) className.push("btn-lg")
@@ -11,10 +13,12 @@ const Button = (props) => {
     if (props.isBlock) className.push("btn-block")
     if (props.hasShadow) className.push("btn-shadow")
 
+    // Untuk function onClick ketika di klik
     const onclick = () => {
         if (props.onclick) props.onclick();
     }
 
+    // Untuk attribute dissabled dan loading
     if (props.isDissabled || props.isLoading) {
         if (props.isDissabled) className.push("disabled");
         return (
@@ -33,6 +37,7 @@ const Button = (props) => {
         );
     }
 
+    // Untuk attribute Link
     if (props.type === "Link") {
         if (props.isExternal) {
             return (
@@ -60,6 +65,7 @@ const Button = (props) => {
         }
     }
 
+    // Ini function yang akan di panggil ke halaman utama
     return (
         <button
             className={className.join(" ")}
@@ -71,6 +77,7 @@ const Button = (props) => {
     )
 }
 
+// Ini untuk attribute yang akan di taruh di setiap halaman / pages untuk button
 Button.propTypes = {
     type: propTypes.oneOf(["button", "Link"]),
     onclick: propTypes.func,
