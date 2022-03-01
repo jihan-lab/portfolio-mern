@@ -38,7 +38,7 @@ const Button = (props) => {
     }
 
     // Untuk attribute Link
-    if (props.type === "Link") {
+    if (props.type === "link") {
         if (props.isExternal) {
             return (
                 <a
@@ -84,6 +84,7 @@ Button.propTypes = {
     href: propTypes.string,
     target: propTypes.string,
     className: propTypes.string,
+    isPrimary: propTypes.bool,
     isDissabled: propTypes.bool,
     isExternal: propTypes.bool,
     isLoading: propTypes.bool,
