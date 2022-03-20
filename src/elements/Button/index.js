@@ -79,7 +79,7 @@ const Button = (props) => {
 
 // Ini untuk attribute yang akan di taruh di setiap halaman / pages untuk button
 Button.propTypes = {
-    type: propTypes.oneOf(["button", "Link"]),
+    type: propTypes.oneOf(["button", "link"]),
     onclick: propTypes.func,
     href: propTypes.string,
     target: propTypes.string,
